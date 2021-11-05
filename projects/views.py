@@ -2,8 +2,13 @@ from django.shortcuts import render
 
 
 def projects(request):
-    return render(request, 'projects.html')
+    context = {
+        'page': 'projects',
+        'number': 12
+    }
+
+    return render(request, 'projects/projects.html', context)
 
 
 def project(request, pk):
-    return render(request, 'single_project.html')
+    return render(request, 'projects/single_project.html')
